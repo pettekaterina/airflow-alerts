@@ -14,7 +14,7 @@ from airflow.operators.python import get_current_context
 from airflow.operators.python_operator import PythonOperator
 
 def report_to_bot_petrova(chat=None):
-    my_token = '6068430500:AAHsAZdIN1PVKWiXkbhEivIYGvcjvZlqXfo' # тут нужно заменить на токен вашего бота
+    my_token = '*******' # тут нужно заменить на токен вашего бота
     bot = telegram.Bot(token=my_token) # получаем доступ
     
     chat_id = chat or -928988566
