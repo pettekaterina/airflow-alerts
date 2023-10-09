@@ -16,7 +16,7 @@ from airflow.operators.python_operator import PythonOperator
 
 # функция для расчета аномального значения, за которое примем значение, выходящее за значение 25 и 75 перцентиля
 def anomaly_detection(metric_1, metric_2, name, chat=None):
-    my_token = '6068430500:AAHsAZdIN1PVKWiXkbhEivIYGvcjvZlqXfo'
+    my_token = '********'
     bot = telegram.Bot(token=my_token)
     if metric_1.mean() <=  metric_2.quantile(0.25) or metric_1.mean() >  metric_2.quantile(0.75):
         chat_id = chat or -968261538
@@ -25,7 +25,7 @@ def anomaly_detection(metric_1, metric_2, name, chat=None):
 
 # функция для расчета аномального значения для количества пользователей
 def anomaly_detection_2(metric_1, metric_2, chat=None):
-    my_token = '6068430500:AAHsAZdIN1PVKWiXkbhEivIYGvcjvZlqXfo' 
+    my_token = '********' 
     bot = telegram.Bot(token=my_token)
     if metric_1 > (metric_2 * 1.5):
         chat_id = chat or -968261538
@@ -38,7 +38,7 @@ def anomaly_detection_2(metric_1, metric_2, chat=None):
 
 # функция для загрузки данных         
 def dag_alert_to_bot_petrova(chat=None):
-    my_token = '6068430500:AAHsAZdIN1PVKWiXkbhEivIYGvcjvZlqXfo' 
+    my_token = '*********' 
     bot = telegram.Bot(token=my_token) 
     chat_id = chat or -968261538
           
